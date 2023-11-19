@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Vertical Scrolling</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .scroll-tracer {
+            height: 70vh;
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .scroll-tracer .col {
+            width: 100%;
+            height: auto;
+        }
+
+        .scroll-tracer .col img {
+            width: 100%;
+            height: auto;
+        }
+
+        .scroll-tracer .col-1 {
+            animation: scroll1 10s linear infinite;
+        }
+
+        .scroll-tracer .col-2 {
+            animation: scroll2 10s linear infinite;
+        }
+
+        .scroll-tracer .col-3 {
+            animation: scroll3 10s linear infinite;
+        }
+
+        .scroll-tracer .col-4 {
+            animation: scroll4 10s linear infinite;
+        }
+
+
+
+
+        @keyframes scroll1 {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        @keyframes scroll2 {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scroll3 {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        @keyframes scroll4 {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="scroll-tracer">
+            <div class="col col-1">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+            </div>
+            <div class="col col-2">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+            </div>
+            <div class="col col-3">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+            </div>
+            <div class="col col-4">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+                <img src="https://static.clideo.com/files/content/506/how-to-resize-picture-for-instagram-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var duplicate1 = document.querySelector(".col-1").cloneNode(true);
+        document.querySelector(".scroll-tracer").appendChild(duplicate1);
+        var duplicate2 = document.querySelector(".col-2").cloneNode(true);
+        document.querySelector(".scroll-tracer").appendChild(duplicate2);
+        var duplicate3 = document.querySelector(".col-3").cloneNode(true);
+        document.querySelector(".scroll-tracer").appendChild(duplicate3);
+        var duplicate4 = document.querySelector(".col-4").cloneNode(true);
+        document.querySelector(".scroll-tracer").appendChild(duplicate4);
+    </script>
+</body>
+
+</html>
